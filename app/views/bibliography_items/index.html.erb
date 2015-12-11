@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Titel</th>
-      <th>Author</th>
+      <th><%= link_to 'Author', bibliography_items_path(sort: @next_sort_order) %></th>
       <th>Source</th>
       <th>Accessed</th>
       <th colspan="3"></th>

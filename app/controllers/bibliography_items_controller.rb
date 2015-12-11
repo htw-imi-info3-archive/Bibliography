@@ -4,7 +4,13 @@ class BibliographyItemsController < ApplicationController
   # GET /bibliography_items
   # GET /bibliography_items.json
   def index
-    @bibliography_items = BibliographyItem.all
+    if order = params["sort"]
+      @bibliography_items = BibliographyItem.all.order(author: order)
+      @next_sort_order = order == "asc" ? "desc" : "asc"
+    else
+      @bibliography_items = BibliographyItem.all
+      @next_sort_order = "asc"
+    end
   end
 
   # GET /bibliography_items/1
