@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titel:</strong>
+  <%= @bibliography_item.titel %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @bibliography_item.author %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @bibliography_item.source %>
+</p>
+
+<p>
+  <strong>Accessed:</strong>
+  <%= @bibliography_item.accessed %>
+</p>
+
+<%= link_to 'Edit', edit_bibliography_item_path(@bibliography_item) %> |
+<%= link_to 'Back', bibliography_items_path %>

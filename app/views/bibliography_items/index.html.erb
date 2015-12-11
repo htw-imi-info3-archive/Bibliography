@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bibliography Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Author</th>
+      <th>Source</th>
+      <th>Accessed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bibliography_items.each do |bibliography_item| %>
+      <tr>
+        <td><%= bibliography_item.titel %></td>
+        <td><%= bibliography_item.author %></td>
+        <td><%= bibliography_item.source %></td>
+        <td><%= bibliography_item.accessed %></td>
+        <td><%= link_to 'Show', bibliography_item %></td>
+        <td><%= link_to 'Edit', edit_bibliography_item_path(bibliography_item) %></td>
+        <td><%= link_to 'Destroy', bibliography_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bibliography item', new_bibliography_item_path %>

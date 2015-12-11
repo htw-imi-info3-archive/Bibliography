@@ -1,0 +1,33 @@
+<%= form_for(@bibliography_item) do |f| %>
+  <% if @bibliography_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bibliography_item.errors.count, "error") %> prohibited this bibliography_item from being saved:</h2>
+
+      <ul>
+      <% @bibliography_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titel %><br>
+    <%= f.text_field :titel %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br>
+    <%= f.text_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :accessed %><br>
+    <%= f.date_select :accessed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
