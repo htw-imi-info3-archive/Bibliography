@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+#locale-select {
+  position:relative;
+   float:right;
+}

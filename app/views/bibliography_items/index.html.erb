@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Bibliography Items</h1>
+<h1><%= t '.listing' %> <%= BibliographyItem.model_name.human(count: 2)%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Titel</th>
-      <th><%= link_to 'Author', bibliography_items_path(sort: @next_sort_order) %></th>
-      <th>Source</th>
-      <th>Accessed</th>
+      <th><%= BibliographyItem.human_attribute_name('titel') %></th>
+      <th><%= link_to BibliographyItem.human_attribute_name('author'), bibliography_items_path(sort: @next_sort_order) %></th>
+      <th><%= BibliographyItem.human_attribute_name('source') %></th>
+      <th><%= BibliographyItem.human_attribute_name('accessed') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= bibliography_item.author %></td>
         <td><%= bibliography_item.source %></td>
         <td><%= bibliography_item.accessed %></td>
-        <td><%= link_to 'Show', bibliography_item %></td>
-        <td><%= link_to 'Edit', edit_bibliography_item_path(bibliography_item) %></td>
-        <td><%= link_to 'Destroy', bibliography_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show'), bibliography_item %></td>
+        <td><%= link_to t('edit'), edit_bibliography_item_path(bibliography_item) %></td>
+        <td><%= link_to t('destroy'), bibliography_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Bibliography item', new_bibliography_item_path %>
+<%= link_to t('new')+' '+ BibliographyItem.model_name.human, new_bibliography_item_path %>
