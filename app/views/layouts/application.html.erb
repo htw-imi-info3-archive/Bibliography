@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bibliography</title>
+  <title><%= t '.title' %></title>
+  <div id="locale-select">
+    <%
+    first = true
+    I18n.available_locales.each do | locale | %>
+    <%= first ? "":"|" %>
+    <%= link_to locale,  url_for( :locale => locale ) %>
+    <%
+    first = false
+    end %>
+  </div>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   end
   get '/:locale' => 'bibliography_items#index'
+  root 'bibliography_items#index'
 end
