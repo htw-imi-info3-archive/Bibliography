@@ -1,6 +1,26 @@
 ---
 de:
+  show: Anzeigen
+  edit: Bearbeiten
+  destroy: Löschen
+  new: Neue
+  layouts:
+    application:
+      title: Quellen
+  bibliography_items:
+    index:
+      listing: Alle
   activerecord:
+    models:
+      bibliography_item:
+        one: Quelle
+        other: Quellen
+    attributes:
+      bibliography_item:
+        titel: Titel
+        author: Autor
+        source: Quelle
+        accessed: Letzter Zugriff
     errors:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'

@@ -21,7 +21,27 @@
 
 ---
 en:
+  show: Show
+  edit: Edit
+  destroy: Destroy
+  new: New
+  layouts:
+    application:
+      title: Bibliography
+  bibliography_items:
+    index:
+      listing: All
   activerecord:
+    models:
+      bibliography_item:
+        one: Bibliography Item
+        other: Bibliography Items
+    attributes:
+      bibliography_item:
+        titel: Title
+        author: Author
+        source: Source
+        accessed: Accessed
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
